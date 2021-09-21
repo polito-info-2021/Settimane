@@ -1,0 +1,22 @@
+Cari Studenti,
+
+benvenuti al Politecnico, benvenuti ad Ingegneria, e benvenuti al corso di Informatica.
+Per le prossime 80 ore, io sarò il vostro docente, insieme all'ing. Luisa Barrera.
+
+L'informazione più importante di questa mail è: tutto il materiale e le informazioni sul corso sono sul sito http://bit.ly/polito-informatica
+
+Le lezioni inizieranno mercoledì 29/09 alle ore 10:00, come da orario, in Aula 5.
+
+Vi chiedo, prima di tale data di installare due strumenti, che ci serviranno per comunicare:
+- Slack, che è una piattaforma di chat evoluta, che useremo per comunicare in modo più snello e per supportarvi nei laboratori e negli esercizi. Scaricate la app (sia su computer che su cellulare) ed unitevi al gruppo al link https://join.slack.com/t/polito-info-2021/signup
+- Zoom, che è una piattaforma di video conferenza, verrà utilizzata per le lezioni del giovedì (che sono on-line) e per la Squadra 3 del Laboratorio. Installate Zoom in anticipo sul vostro PC (https://zoom.us/download).
+
+In seguito, dovrete installare anche Python e PyCharm Edu, di cui ci sono le istruzioni di installazione sul sito del corso (ripeto: http://bit.ly/polito-informatica).
+
+D'ora in avanti utilizzeremo pochissimo la mail, tutte le comunicazioni (da parte mia e da parte vostra) saranno gestite tramite Slack, per cui iscrivetevi tutti/e.
+
+Per eventuali dubbi o domande, scrivete liberamente sul canale #discussione di Slack.
+
+Buon Week-End, ci vediamo "al Poli" mercoledì alle 10:00.
+
+Fulvio Corno
