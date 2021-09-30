@@ -1,0 +1,20 @@
+Data una sequenza di numeri S = (4, 3, 8, 1, 21, 6, 18, 5)
+Determinare e stampare il valore massimo (8)
+
+Idea: usare una variabile MAX che contiene la "ipotesi migliore" del massimo effettivo. Cioè il massimo valore incontrato FINORA
+
+S = ( )
+
+LEGGI UNA SEQUENZA S 
+
+SE LA LUNGHEZZA DI S = 0 ALLORA:
+	ERRORE: Impossibile calcolare il Max
+
+# MAX = -1000000 (numero "certamente" inferiore ai dati di S)
+MAX = PRIMO VALORE DI S
+
+PRENDI I VALORI DI S UNO ALLA VOLTA - PER CIASCUN VALORE X:
+	SE X>MAX:
+		MAX = X
+
+STAMPA MAX

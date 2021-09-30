@@ -1,0 +1,15 @@
+CALCOLA MCD (A , B)
+
+Ipotesi: A, B >= 1
+
+LEGGI A
+LEGGI B
+
+N = 1
+
+RIPETI FINCHÉ N<=A e N<=B:
+	SE A è divisible per N e B è divisibile per N:
+		MCD = N
+	N = N + 1
+
+STAMPA MCD

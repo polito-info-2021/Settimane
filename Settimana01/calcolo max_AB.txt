@@ -1,0 +1,51 @@
+Dati: A, B: numeri reali
+Obiettivo: calcolare il massimo tra A e B
+
+Esempio: se A=3, B=5 -> Valore del massimo: 5
+Esempio: se A=8, B=8 -> Valore del massimo: 8
+
+ALGORITMO:
+
+LEGGI A (input: il programma legge dall'utente)
+LEGGI B 
+SE A>B OPPURE A=B ALLORA:   /oppure/      SE A>=B ALLORA:
+	VISUALIZZARE/STAMPA IL VALORE DI A
+SE A<B ALLORA:  /oppure/ ALTRIMENTI:
+	VISUALIZZARE/STAMPA IL VALORE DI B
+
+"DRY" Don't Repeat Yourself
+
+DIVERSO: Obiettivo: determinare quale tra A e B sia il massimo
+	-> Il valore massimo è B
+
+LEGGI A
+LEGGI B
+SE A>B ALLORA:
+	STAMPA "IL MASSIMO È IN A"
+SE A<B ALLORA:
+	STAMPA "IL MASSIMO È IN B"
+SE A=B ALLORA:
+	STAMPA "I VALORI SONO UGUALI"
+
+	-> Il valore massimo è contenuto in B e vale 5
+	
+
+
+
+Dati: A, B: numeri reali
+Obiettivo: calcolare il massimo tra A e B, e calcolare il quadrato del max
+
+Esempio: se A=3, B=5 -> Valore del massimo: 5, il quadrato è 25
+Esempio: se A=8, B=8 -> Valore del massimo: 8, il quadrato è 64
+
+LEGGI A
+LEGGI B
+
+SE A>=B ALLORA:
+	MASSIMO = A
+ALTRIMENTI:
+	MASSIMO = B
+	
+STAMPA MASSIMO
+STAMPA MASSIMO^2
+qui non so più qual era il max

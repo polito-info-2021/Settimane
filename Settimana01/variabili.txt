@@ -1,0 +1,12 @@
+VARIABILI
+
+"assegnazione", dare un (nuovo) valore alla variabile stessa
+A = 3
+
+A = 7
+
+A = ((B+7)/3)^(C+9)
+
+"confronto"
+
+SE A==B ALLORA:
