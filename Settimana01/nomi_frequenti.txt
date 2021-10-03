@@ -1,0 +1,19 @@
+Dato l'elenco degli studenti iscritti al corso (scaricato dal Portale il 29/09/2021), determinare la frequenza con cui compaiono i diversi nomi degli studenti e stampare il nome con frequenza massima.
+Visualizzare un istrogramma con le frequenze dei nomi più frequenti.
+I nomi doppi (o multipli) verranno considerati come distinti dai nomi componenti.
+
+
+PROCEDIMENTO 1
+
+--> crea una tabella con tutti i nomi presenti (riportandoli una sola volta) ed a fianco di ciascuno, la sua frequenza di apparizione
+
+(A)- Prendo il nome (N) dello studente nella prossima riga del file
+- Se N è già presente nei nomi salvati, non fare nulla
+- Se N non è presente tra i nomi salvati:
+	- parti da conteggio = 1
+	- Analizzo il nome (N1) presente in ciascuna delle successive righe del file
+	- Se N1=N, incrementa il conteggio
+	- Alla fine del file, salva ( N, conteggio )
+- Ripeti da (A) finché non sei alla fine del file
+
+--> Trova, tra i dati salvati, il NOME (o i nomi) che corrisponde al CONTEGGIO massimo
