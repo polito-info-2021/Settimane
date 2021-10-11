@@ -37,24 +37,21 @@
 #         no -> il valore precedente di n è la risposta
 
 
-
 # DEFINISCO I DATI DI INGRESSO
 LUNGHEZZA_MURO = 100
 DIM_PIASTRELLA = 33
 
 # CALCOLO NUMERO DI PIASTRELLE BIANCHE, NERE, TOTALI
-coppie_piastrelle = (LUNGHEZZA_MURO-DIM_PIASTRELLA) // (2*DIM_PIASTRELLA)
+coppie_piastrelle = (LUNGHEZZA_MURO - DIM_PIASTRELLA) // (2 * DIM_PIASTRELLA)
 # print(coppie_piastrelle)
 bianche = coppie_piastrelle
 nere = bianche + 1
 num_piastrelle = bianche + nere
 
 # CALCOLO SPAZIO DA LASCIARE AI LATI
-spazio_vuoto = (LUNGHEZZA_MURO - num_piastrelle*DIM_PIASTRELLA)/2
+spazio_vuoto = (LUNGHEZZA_MURO - num_piastrelle * DIM_PIASTRELLA) / 2
 
 # STAMPO I RISULTATI OTTENUTI
-print("Dato un muro di", LUNGHEZZA_MURO, "cm e una piastrella di",
-      DIM_PIASTRELLA, "cm")
-print("Dovrai posizionare", num_piastrelle, "piastrelle, di cui",
-      bianche, "bianche e", nere, "nere")
+print("Dato un muro di", LUNGHEZZA_MURO, "cm e una piastrella di", DIM_PIASTRELLA, "cm")
+print("Dovrai posizionare", num_piastrelle, "piastrelle, di cui", bianche, "bianche e", nere, "nere")
 print("Devi lasciare", spazio_vuoto, "cm da ciascun lato")
