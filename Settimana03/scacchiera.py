@@ -47,14 +47,14 @@ else:  # 'gg'
         else:
             num_colonna = 8
 
-        num_colonna = ord(colonna) - (ord('a')-1) # 96
+        num_colonna = ord(colonna) - (ord('a') - 1)  # 96
 
         # in che posizione si trova colonna all'interno di "abcdefgh" ?
         # num_colonna = "abcdefgh".find(colonna)+1
 
         # Calcola la somma del numero di riga + numero di colonna
         # Se questa somma è pari -> nera, altrimenti -> bianca
-        if (num_riga+num_colonna) % 2 == 0:
+        if (num_riga + num_colonna) % 2 == 0:
             colore = 'nera'
         else:
             colore = 'bianca'
