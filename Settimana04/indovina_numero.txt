@@ -1,0 +1,35 @@
+ESERCIZI PROPOSTI: INDOVINA IL NUMERO
+
+Esercizio 1)
+
+Scrivere un programma Python in cui il computer "pensa" ad un numero intero compreso
+tra 1 e 100, e l'utente deve indovinare il numero pensato.
+L'utente può inserire uno o più tentativi. Per ciascun tentativo (numero intero tra 1 e 100),
+il computer può rispondere:
+- troppo basso
+- troppo alto
+- indovinato.
+Nel caso in cui il numero sia stato indovinato, il computer stampa anche il numero di tentativi
+impiegati dall'utente.
+
+Opzionale: limitare il gioco ad un numero massimo di tentativi (ad esempio 10).
+
+Opzionale: se l'utente inserisce "abbandono", il programma mostrerà il
+numero pensato e terminerà l'esecuzione.
+
+Esercizio 2)
+
+Scrivere un programma Python in cui l'utente pensa ad un numero intero compreso
+tra 1 e 100, ed il computer deve indovinare il numero pensato.
+Ad ogni iterazione, il computer proporrà un tentativo. L'utente potrà rispondere:
+- troppo basso
+- troppo alto
+- indovinato.
+(NOTA: per comodità dell'utente, questi messaggi possono essere abbreviati in
+basso/alto/indovinato oppure b/a/i)
+A seguito della risposta dell'utente, il computer aggiornerà le proprie predizioni
+e farà un tentativo successivo.
+L'algoritmo sviluppato dovrà garantire di trovare la soluzione entro 7 tentativi (o
+meno), qualsiasi sia il numero pensato.
+(NOTA: si ipotizzi che l'utente fornisca risposte SEMPRE veritiere)
+
