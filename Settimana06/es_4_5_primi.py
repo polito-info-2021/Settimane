@@ -1,4 +1,4 @@
-# Soluzione esercizio 4.5+
+# Soluzione esercizio 4.5 del Lab04
 
 n = int(input("Valore max: "))
 

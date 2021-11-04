@@ -1,8 +1,16 @@
-# Soluzione esercizio 4.7
+# Soluzione esercizio 4.7 del Lab04
 import random
 
 
 def mossa_intelligente(biglie):
+    """
+    Trova la mossa "intelligente" da fare quando gioca il Computer. Toglie un numero di biglie tale
+    che quelle rimanenti siano nella forma 2**k-1.
+    **Attenzione**: funziona solo se biglie<100.
+
+    :param biglie: Numero di biglie attualmente presenti nel mucchio
+    :return: Numero di biglie da togliere
+    """
     if biglie == 63 or biglie == 31 or biglie == 15 or biglie == 7 or biglie == 3:
         return random.randint(1, max(biglie // 2, 1))
     if biglie > 63:
@@ -18,15 +26,15 @@ def mossa_intelligente(biglie):
     else:
         return 1
 
-# Suggerimento alternativo:
-#     if not log2(b+1).is_integer():    #ossia se b NON è una potenza di 2 -1
-#         power = int(log2(b)) #potenza
-#         pcprende = b + 1 - 2**power
-#         print("Il computer prende", pcprende, "biglie")
-#         b = b - pcprende #b = biglie totali
 
+# Suggerimento su un metodo alternativo:
+#     if not log2(biglie+1).is_integer():    #ossia se b NON è una potenza di 2 -1
+#         power = int(log2(biglie)) #potenza
+#         prendi = biglie + 1 - 2**power
 
-biglie = random.randint(10, 100)  # dimensione iniale del mucchio
+# Programma principale
+
+biglie = random.randint(10, 100)  # dimensione iniziale del mucchio
 print(f'Partita a NIM con {biglie} biglie')
 
 if random.randint(0, 1) == 0:
@@ -63,7 +71,7 @@ while biglie > 0:  # partita in corso
         biglie = biglie - prendi
     turno_giocatore = not turno_giocatore
 
-if turno_giocatore == True:
+if turno_giocatore:
     print("Ha vinto il giocatore")
 else:
     print("Ha vinto il computer")
