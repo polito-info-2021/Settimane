@@ -6,4 +6,5 @@
 - [Settimana 03](./Settimana03) - Costrutti condizionali.
 - [Settimana 04](./Settimana04) - Cicli `while`. Input.
 - [Settimana 05](./Settimana05) - Cicli `for`. Cicli annidati. Esercizio "BlackJack"
+- [Settimana 06](./Settimana06) - Funzioni. Risoluzione esercizi selezionati Lab04.
 
