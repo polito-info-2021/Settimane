@@ -1,4 +1,5 @@
 import csv
+from operator import itemgetter
 from pprint import pprint
 
 
@@ -42,22 +43,18 @@ nomi_colonne = ['nome', 'massa', 'diametro', 'densita', 'gravita', 'velocita_fug
                 'pressione', 'lune', 'anelli', 'campo_magnetico']
 
 with open('planets.csv', 'r', encoding='utf-8') as infile:
-
-    infile.readline() # ignora la prima riga
+    infile.readline()  # ignora la prima riga
 
     reader = csv.DictReader(infile, fieldnames=nomi_colonne)
 
     for pianeta in reader:
         converti_float(pianeta)
 
-
-
         pianeti.append(pianeta)
         pianeti_diz[pianeta['nome']] = pianeta
 
-pprint(pianeti)
-pprint(pianeti_diz)
-
+# pprint(pianeti)
+# pprint(pianeti_diz)
 
 # Determina il pianeta che ha la massima gravità
 
@@ -69,4 +66,10 @@ for pianeta in pianeti:
         maxg = pianeta['gravita']
 print(f'La massima gravità si trova su {nome_max} e vale {maxg}')
 
+# Riordina i pianeti in ordine di gravità crescente
 
+pianeti.sort(key=itemgetter('gravita'))
+print(pianeti)
+
+pianeta_max_gravita = max(pianeti, key=itemgetter('gravita'))
+print(f'La massima gravità si trova su {pianeta_max_gravita["nome"]} e vale {pianeta_max_gravita["gravita"]}')
