@@ -14,4 +14,4 @@
 - [Settimana 11](./Settimana11) - Eccezioni
 - [Settimana 12](./Settimana12) - Insiemi e Dizionari
 - [Settimana 13](./Settimana13) - Simulazione d'esame
-- Settimana 14 - Esercizi d'esame
+- [Settimana 14](./Settimana14) - Esercizi d'esame
