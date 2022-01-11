@@ -1,0 +1,28 @@
+
+         1 1
+    A =  1 0 1 0 0 1 
+	B =  1 1 1 0 0 0
+	----------------
+	     1 0 0 0 0 1
+
+  (A-) + (B-) --> (A+B)-
+  
+  poiché i segni tornano, non c'è stato overflow
+  
+  A = -32 + 8 + 1 = -23
+  B = -32 + 16 + 8 = -8
+  A+B = -32 + 1 = -31
+  
+===================
+
+I registri sono una memoria di ridottissime dimensioni, direttamente 
+collegati alla ALU/FPU.
+Ogni operazione aritmetica opera sui dati contenuti nei registri.
+Possono essere usati anche per memorizzare dati di utilizzo immediato
+in quanto sono la memoria più veloce a bordo del calcolatore.
+
+========================
+
+Una lista può contenere QUALSIASI TIPO di valore.
+
+Un insieme può contenere solamente dati che siano immutabili (tuple, stringhe, interi). No Liste, dizionari, insiemi
