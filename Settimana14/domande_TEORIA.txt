@@ -1,0 +1,373 @@
+BASE 16  e  BASE 8
+
+01232456789ABCDEF
+
+F3 in base 16 (esadecimale / hex)
+
+valore = F * 16^1 + 3 * 16^0 = 15 * 16 + 3 = 243
+
+F (16)  = 1111 (2)
+3 (16)  = 0011 (2)
+
+F3 (16) = 1111_0011 (2)
+
+Base 8 : 01234567
+341 (8) = 011_100_001 (2) = 011100001
+massimo numero su 8 bit 377 (0)(11_111_111)
+
+massimo numero su 8 in base 16 : FF
+
+
+===============================================================================
+SISTEMI DI NUMERAZIONE
+
+# 1
+
+Base 16 : ogni cifra corrisponde a 4 bit (binario puro)
+Base  8 : ogni cifra corrisponde a 3 bit (binario puro)
+
+AA (16) = 1010_1010 (2) = -128 + 42 = -86
+F3 (16) = 1111_0011 (2) = -128 + (3+16+32+64) = -128 + 115 = -13
+7F (16) = 0111_1111 (2) = 127
+
+Il numero più vicino allo zero è F3
+
+# 2
+
+Pesi: -8 4 2 1
+-8 (10) = 1000 (ca2) per conversione diretta
+
+ALTERNATIVA
+- scrivi +8 in binario puro = 1000
+- inverti i bit = 0111
+- somma 1
+    0111+
+    0001=
+    ----
+    1000 in CA2
+
+il numero decimale -8
+si rappresenta in base 16 (ca2) come : 8
+
+# 3
+
+A3 + 7F
+
+A3 = 1010_0011
+7F = 0111_1111
+
+1 0 1 0 0 0 1 1 +
+0 1 1 1 1 1 1 1 =
+-----------------
+0 0 1 0 0 0 1 0
+
+Risultato = 00100010 (senza overflow) = 22 (16)
+
+# 4
+
+Binario puro su 6 bit:
+
+più piccolo: 000000  = 0
+più grande:  111111  = 63  (2^6-1)
+
+Complemento a 2 su 6 bit:
+
+più piccolo: 100000 = -32  (-2^(6-1))
+più grande:  011111 = +31  (+2^(6-1)-1)
+
+#5
+
+01 = 0000_0001
+A2 = 1010_0010
+B2 = 1011_0010
+32 = 0011_0010
+80 = 1000_0000
+7F = 0111_1111
+FF = 1111_1111
+
+Negativi:
+80 = 1000_0000
+A2 = 1010_0010
+B2 = 1011_0010
+FF = 1111_1111
+Positivi:
+01 = 0000_0001
+32 = 0011_0010
+7F = 0111_1111
+
+#6
+
+B5 = 1011_0101
+in binario puro = 128+32+16+4+1
+in complemento a 2 = -128+32+16+4+1
+in modulo e segno = - (32+16+4+1)
+
+#8
+24  = 011000
+47  = 101111
+SUM = 000111 (con riporto => OVERFLOW nella somma)
+
+===========================================================
+ARCHITETTURE
+
+#1
+
+Memoria Ram
+    Volatile
+    Veloce (~10ns)
+    Interna
+    Abbastanza capiente (4-8-16 GB)
+    Più costosa
+    La CPU può accedere direttamente (per leggere/scrivere dati o per eseguire programmi)
+
+Memoria hard disk SSD
+    Permanente
+    Lenta (~10ms)
+    Esterna
+    Molto capiente (1-2 TB = 1000-2000 GB)
+    Più economica
+
+#2
+
+Bus = strutture di collegamento per il trasferimento dati
+
+Bus seriale fa passare 1 bit per volta, è composto di solo 2 fili,
+    di cui 1 per i dati.
+Esempio: Bus USB, bus HDMI
+
+Bus parallelo fa passare N bit per volta, è composto da N+1 fili
+Esempio: vecchi collegamenti alle stampanti
+Esempio: bus interni dell'elaboratore (bus dati o indirizzi)
+
+#3
+
+Crescita clock CPU -> necessità di sempre maggiore potenza di calcolo
+ -> avanzamenti della tecnologia permettono di costruire circuiti
+ più veloci
+
+Ultimamente si trova difficile aumentare ancora la frequenza di clock
+per limiti tecnologici, quindi per migliorare le presazioni si va verso
+CPU multiple (multi-core).
+
+#4 e #5 e #10
+
+Ci sono memorie diverse
+Le memorie più vicine alla CPU sono più veloci, ma meno capienti
+Via via che mi allontano dalla CPU, le memorie saranno più capienti, ma più lente,
+e possono essere permanenti (non volatili)
+Non le posso avere tutte veloci e capienti per ragioni di costo
+CPU: registri -> cache -> RAM -> SSD -> HardDisk
+Tutto il meccanismo serve per arrivare alla CPU i dati alla veloclità massima,
+ma permettendo di accedere alla capienza massima
+
+#6 e #8
+
+CPU = UC + UO
+
+UC unità di controllo
+    - PC program counter: memorizza indirizzo della prossima istruzione da eseguire
+        001110110 -> la prox istruzione è in memoria a questo indirizzo
+    - IR instruction register: codifica binaria dell'istruzione da eseguire
+    - logica di decodifica, dal contenuto dell'IR determina i comandi da dare
+    alla UO ed alla memoria
+
+UO unità operativa
+    - ALU unità aritmetico logica (FPU floating point unit)
+    - Registri
+    - Registro dei flag
+
+#7 e # 9
+
+I bus sono una infrastruttura di comunicazione interna all'elaboratore, per
+trasferire i dati dalla CPU da/verso la memoria o le periferiche.
+- Bus indirizzi (ABUS): bus parallelo di N bit che specifica l'indirizzo di memoria
+da cui leggere/scrivere
+- Bus dati (DBUS): bus parallelo di M bit sui cui transitano i dati letti/scritti
+- Bus di controllo (CBUS): comandi e temporizzazioni
+
+Capacità di memoria indirizzabile dalla CPU
+    celle di memoria indirizzabili = 2 ^ N
+    dimensione della singola cella di memoria = M (ampiezza DBUS)
+        M bit x 2^N indirizzi
+
+================================================================
+PROGRAMMAZIONE PYTHON
+
+#1
+
+Si dice 'alias' una variabile che faccia riferimento allo stesso valore di un'altra
+variabile. Ad esempio
+a = [ 1, 2, 3]
+b = a  # è un alias
+Problemi:
+ - le modifiche fatte ad 'a' influenzando anche 'b', e v/v
+ - nelle funzioni, bisogna fare attenzione a non "perdere" l'alias
+ qualora la funzione debba modificare il valore passato
+ b = b + [4]   # b non è più alias, ma punta ad una nuova lista
+ b.extend([4]) # viene estesa la stessa lista di prima
+
+ #2
+
+ Dizionario: mette in relazione una "chiave" con un "valore", come in un dizionario
+ in cui a ciascuna parola (chiave) associo una descrizione/spiegazione (valore).
+ Al dizionario (sia di carta che python) si fa SEMPRE accesso per chiave.
+
+ #3
+
+L'indentazione se per delimitare i "blocchi" nei costrutti if/while/for/ eccetera.
+
+if a>0:
+    print(a)
+print(b)  # viene fatta sempre
+
+if a>0:
+    print(a)
+    print(b)  # viene fatta solo se a>0
+
+#4
+
+if a>1:
+    qualcosa_1  # se a>1
+elif a>2:
+    qualcosa_2  # mai
+elif a>3:
+    qualcosa_3  # mai
+
+if a>3:
+    qualcosa_2  # se a>3
+elif a>2:
+    qualcosa_2  # se 2<a<=3
+elif a>1:
+    qualcosa_1  # se 1<a<=2
+
+#5
+
+    [ 1, 2, 3, 4 ]
+    rappresenta i dati in modo lineare, dove non si vedono
+    più righe e colonne
+    è più complesso accedere ad un elemento conoscendo riga e colonna
+    m[riga*n_col+col]
+    meno preferibile nella maggior parte dei casi
+
+    [[1,2], [3,4]]
+    rappresentazione come lista di liste "per righe"
+    più comune, più intuitiva
+    m[riga][col]
+
+    [[1,3], [2,4]]
+    rappresentazione come lista di liste "per colonne"
+    meno comune
+    potrebbe essere utile se devo lavorare per colonne
+    m[col][riga]
+
+#6
+
+Visibilità di una variabile = porzione di codice in cui
+tale variabile può essere utilizzata
+(dal punto in cui viene definita, fino alla fine della funzione)
+
+Variabili locali = definite all'interno di una funzione, visibili solo
+dal codice della funzione stessa
+
+Varibili globali = definite all'esteno delle funzioni e sono visibili
+a tutto il codice del programma (interno ed esterno alle funzioni)
+
+È preferibile usare variabili locali perché non si rischiano di modificare
+dati non desiderati.
+
+def leggi():
+   file = open('abc.txt', 'r')
+   testo = file.read()
+   file.close()
+   return testo
+
+def altra():
+    t = 4
+    print(t)
+
+def main():
+    t = leggi()
+    print(t)
+
+main()
+
+#7 e #8
+
+set ->
+non ha duplicati ++ --
+non mantiene l'ordine  --
+gli elementi non hanno indice, non posso accedere ad singolo --
+è rapidissimo controllare se un elemento esiste ++
+può contenere solo dati immutabili --
+Esempio: numeri usciti al lotto/tombola
+
+list ->
+pùo avere duplicati  ++  --
+mantiene l'ordine di inserimento  ++
+posso accedere a un singolo elemento conoscendo l'indice  ++
+il controllo di esistenza richiede di leggere tutti gli elementi  --
+può contenere qualsiasi tipo di dato ++
+Esempio: elenchi alfabetici di nomi di persone
+
+#9
+
+Voglio creare d2 come copia di d1
+
+    d2 = d1
+    NO: crea un ALIAS
+
+    d2 = dict(d1.values())
+    NO: impossibile creare un dict da una lista, e mancherebbero le chiavi
+
+    d2 = dict(d1.keys())
+    NO: impossibile creare un dict da una lista, e mancherebbero i valori
+
+    d2 = dict(d1)
+    OK!
+
+#10
+
+dict->
+contiene delle associazioni chiave-valore
+è mutabile (posso aggiungere/cancellare chiavi e modificare valori)
+== le chiavi sono univoche e non duplicate
+le chiavi sono in ordine di inserimento
+
+set->
+contiene valori singoli (immutabili)
+è mutabile (posso aggiungere/cancellare elementi)
+== gli elementi sono univoci e non duplicati
+gli elementi non sono ordinati
+
+# 11
+
+
+    dizionario di liste
+
+    SI
+    dizionario i cui VALORI (non le chiavi) sono liste
+    voti = {
+        123456: [30, 29, 30, 29],
+        234543: [30, 28, 28]
+    }
+
+    set di dizionari
+
+    NO perché un dizionario non è immutabile, quindi non si
+    può mettere in un set
+
+
+    dizionario di set
+
+    SI
+    dizionario in cui i VALORI (ma non le chiavi) siano dei set
+
+    bandiere = {
+        'Italia': { 'rosso', 'bianco', 'verde'},
+        'Francia': { 'blu', 'bianco', 'rosso'}
+    }
+
+    lista di liste.
+
+    SI
+    a = [[1, 2], [3, 4]]
